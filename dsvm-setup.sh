@@ -53,4 +53,8 @@ export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRAR
 # Build darknet
 sudo make
 
+# Change permissions to all darknet resources
+cd $WD
+sudo chmod -R ugo+rw darknet/
+
 echo "Done!"
