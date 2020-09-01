@@ -67,7 +67,7 @@
       "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
       "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]",
       "apiVersion": "2015-06-15",
-      "scriptUri": "https://gist.githubusercontent.com/michhar/9a48726eba94f164358a75f1a9fde610/raw/cf26c510da561b0a0590a3c0c747f5705296eb5d/dsvm_darknet_setup.sh"
+      "scriptUri": "https://raw.githubusercontent.com/michhar/darknet-azure-vm/master/dsvm-setup.sh"
     },
     "resources": [
       {
@@ -190,13 +190,13 @@
           {
             "apiVersion": "2016-04-30-preview",
             "type": "extensions",
-            "name": "fastaivm",
+            "name": "darknetvm",
             "location": "[resourceGroup().location]",
             "dependsOn": [
               "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
             ],
             "tags": {
-              "displayName": "fastaivm"
+              "displayName": "darknetvm"
             },
             "properties": {
               "publisher": "Microsoft.Azure.Extensions",

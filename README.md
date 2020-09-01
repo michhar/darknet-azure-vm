@@ -1,6 +1,6 @@
 # New Data Science Virtual Machine for Darknet Projects
 
-The goal of this repository is to supply a simple mechanism for deploying and setting up a Darknet environment ([See the YOLO v4 Darknet GitHub repository for information](https://github.com/AlexeyAB/darknet)). The button below deploys to an [Ubuntu-based Data Science VM](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro) (NC-series) to azure and installs the relevant dependencies.
+The goal of this repository is to supply a simple mechanism for deploying and setting up a Darknet environment (<a href="https://github.com/AlexeyAB/darknet" target="_blank">Darknet repository</a>). The button below deploys to an [Ubuntu-based Data Science VM](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro) (NC-series) to azure and installs the relevant dependencies.
 
 **NOTE**: An Azure subscription is required - see below.
 
@@ -56,6 +56,6 @@ The resources are created, and then a [custom script extension](https://docs.mic
 
 It does the following:
 
-- Builds Darknet on the Ubuntu DSVM
+- Builds <a href="https://github.com/AlexeyAB/darknet" target="_blank">Darknet</a> on the Ubuntu DSVM
 
 See the [dsvm-setup.sh](dsvm-setup.sh) file for details.
