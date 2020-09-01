@@ -34,6 +34,7 @@ sudo apt-get install python-opencv
 git clone https://github.com/AlexeyAB/darknet.git
 cd darknet/
 
+# Update variables to enable GPU acceleration for build
 sed -i "s/GPU=0/GPU=1/g" Makefile
 sed -i "s/CUDNN=0/CUDNN=1/g" Makefile
 sed -i "s/CUDNN_HALF=0/CUDNN_HALF=1/g" Makefile
@@ -41,8 +42,15 @@ sed -i "s/OPENCV=0/OPENCV=1/g" Makefile
 sed -i "s/AVX=0/AVX=1/g" Makefile
 sed -i "s/OPENMP=0/OPENMP=1/g" Makefile
 sed -i "s/LIBSO=0/LIBSO=1/g" Makefile
+sed -i "s/NVCC=nvcc/NVCC=\/usr\/local\/cuda-10.0\/bin\/nvcc/g" Makefile
+
+# Change permissions on shell scripts
+sudo chmod ugo+x *.sh
+
+export PATH=/usr/local/cuda-10.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 # Build darknet
-make
+sudo make
 
 echo "Done!"
