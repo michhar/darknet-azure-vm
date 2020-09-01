@@ -66,6 +66,8 @@ See the [dsvm-setup.sh](dsvm-setup.sh) file for details.
 
 You should test darknet.  SSH into the VM.  On Windows, you can do so using a tool such as <a href="https://www.putty.org" target="_blank">PuTTY</a>.
 
+> Note: If you have difficulty logging in (timeout etc.), you may need to navigate to the VM in the Azure Portal and go to Networking under Settings.  There, delete the Cleanuptool-Deny-103 Inbound port rule.  This will allow you to temporarily access the VM with SSH.  You may need to repeat this in the future.
+
 ```
 ssh <username>@<public IP or DNS name>
 cd darknet
@@ -75,6 +77,7 @@ wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/y
 
 There are test images in the `data` folder under the `darknet` repository to try.  The image is saved each time as `predictions.jpg` and may be downloaded with the Unix `scp` command or <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank">Windows SCP client</a>.
 
+`scp <username>@<public IP or DNS name>:~/darknet/predictions.jpg .`
 
 ## Credits
 
