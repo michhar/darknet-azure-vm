@@ -2,7 +2,7 @@
 
 <img width="75%" src="media/giraffe.jpg">
 
-The goal of this repository is to supply a simple mechanism for deploying and setting up a Darknet environment (<a href="https://github.com/AlexeyAB/darknet" target="_blank">Darknet repository</a>). The button below deploys to an [Ubuntu-based Data Science VM](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro) (NC-series) to azure and installs the relevant dependencies.
+The goal of this repository is to supply a simple mechanism for deploying and setting up a Darknet environment (<a href="https://github.com/AlexeyAB/darknet" target="_blank">Darknet repository</a>). The button below deploys to an [Ubuntu-based Data Science VM](https://docs.microsoft.com/en-us/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro) (NC-series) to Azure and installs the relevant dependencies.
 
 **NOTE**: An Azure subscription is required - see below.
 
@@ -61,6 +61,20 @@ It does the following:
 - Builds <a href="https://github.com/AlexeyAB/darknet" target="_blank">Darknet</a> on the Ubuntu DSVM
 
 See the [dsvm-setup.sh](dsvm-setup.sh) file for details.
+
+## What's next?
+
+You should test darknet.  SSH into the VM.  On Windows, you can do so using a tool such as <a href="https://www.putty.org" target="_blank">PuTTY</a>.
+
+```
+ssh <username>@<public IP or DNS name>
+cd darknet
+wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights
+./darknet detector test ./cfg/coco.data ./cfg/yolov4-tiny.cfg ./yolov4-tiny.weights
+```
+
+There are test images in the `data` folder under the `darknet` repository to try.  The image is saved each time as `predictions.jpg` and may be downloaded with the Unix `scp` command or <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank">Windows SCP client</a>.
+
 
 ## Credits
 
